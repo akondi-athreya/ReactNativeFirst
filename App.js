@@ -1,70 +1,47 @@
-import { ScrollView, StyleSheet, Text, View, Image } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, Image, FlatList } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 
 export default function App() {
+    const data = [
+        {
+            name: "athreya",
+            RollNo: "22MH1A42E7",
+        },
+        {
+            name: "Bhanu",
+            RollNo: "22MH1A42I6",
+        },
+        {
+            name: "kalebu",
+            RollNo: "22MH1A42H5",
+        },
+        {
+            name: "gopal",
+            RollNo: "22MH1A4296",
+        }
+    ]
     return (
         <>
             <View style={styles.status}></View>
             <View style={styles.container}>
-                <ScrollView horizontal contentContainerStyle={styles.scrollViewContent}>
-                    <View style={styles.card}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={styles.profileImage}
-                                source={{ uri: "https://info.aec.edu.in/adityacentral/studentphotos/22MH1A42H5.jpg" }}
-                            />
+                    <FlatList data={data} horizontal  contentContainerStyle={styles.flatListContent}
+                        renderItem={({ item }) =>
+                        <View style={styles.card}>
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    style={styles.profileImage}
+                                    source={{ uri: `https://info.aec.edu.in/adityacentral/studentphotos/${item.RollNo}.jpg` }}
+                                />
+                            </View>
+                            <View style={styles.infoContainer}>
+                                <Text style={styles.text}><Text style={styles.label}>Name :</Text> {item.name}</Text>
+                                <Text style={styles.text}><Text style={styles.label}>Roll No :</Text> {item.RollNo}</Text>
+                                <Text style={styles.text}><Text style={styles.label}>Branch :</Text> AI & ML</Text>
+                                <Text style={styles.text}><Text style={styles.label}>College :</Text> ACET</Text>
+                            </View>
                         </View>
-                        <View style={styles.infoContainer}>
-                            <Text style={styles.text}><Text style={styles.label}>Name:</Text> Kalebu</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Roll No:</Text> 22MH1A42H5</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Branch:</Text> Artificial Intelligence & Machine Learning</Text>
-                            <Text style={styles.text}><Text style={styles.label}>College:</Text> Aditya College of Engineering & Technology</Text>
-                        </View>
-                    </View>
-                    <View style={styles.card}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={styles.profileImage}
-                                source={{ uri: "https://info.aec.edu.in/adityacentral/studentphotos/22MH1A42H5.jpg" }}
-                            />
-                        </View>
-                        <View style={styles.infoContainer}>
-                            <Text style={styles.text}><Text style={styles.label}>Name:</Text> Kalebu</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Roll No:</Text> 22MH1A42H5</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Branch:</Text> Artificial Intelligence & Machine Learning</Text>
-                            <Text style={styles.text}><Text style={styles.label}>College:</Text> Aditya College of Engineering & Technology</Text>
-                        </View>
-                    </View>
-                    <View style={styles.card}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={styles.profileImage}
-                                source={{ uri: "https://info.aec.edu.in/adityacentral/studentphotos/22MH1A42H5.jpg" }}
-                            />
-                        </View>
-                        <View style={styles.infoContainer}>
-                            <Text style={styles.text}><Text style={styles.label}>Name:</Text> Kalebu</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Roll No:</Text> 22MH1A42H5</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Branch:</Text> Artificial Intelligence & Machine Learning</Text>
-                            <Text style={styles.text}><Text style={styles.label}>College:</Text> Aditya College of Engineering & Technology</Text>
-                        </View>
-                    </View>
-                    <View style={styles.card}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={styles.profileImage}
-                                source={{ uri: "https://info.aec.edu.in/adityacentral/studentphotos/22MH1A42H5.jpg" }}
-                            />
-                        </View>
-                        <View style={styles.infoContainer}>
-                            <Text style={styles.text}><Text style={styles.label}>Name:</Text> Kalebu</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Roll No:</Text> 22MH1A42H5</Text>
-                            <Text style={styles.text}><Text style={styles.label}>Branch:</Text> Artificial Intelligence & Machine Learning</Text>
-                            <Text style={styles.text}><Text style={styles.label}>College:</Text> Aditya College of Engineering & Technology</Text>
-                        </View>
-                    </View>
-                </ScrollView>
+                        } />
             </View>
             <StatusBar style='auto' />
         </>
@@ -82,19 +59,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    scrollViewContent: {
-        paddingVertical: 20,
-        paddingHorizontal: 10,
-        flexDirection: 'row',
+    flatListContent: {
+        justifyContent: 'center',
         alignItems: 'center',
     },
     card: {
         width: 320,
-        height: 350,
+        height: 250,
         backgroundColor: '#fff',
         borderRadius: 15,
-        marginHorizontal: 15,
-        padding: 15,
+        marginHorizontal: 35,
+        paddingTop: 70,
+        paddingInline: 20,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,

@@ -1,6 +1,10 @@
 import { ScrollView, StyleSheet, Text, View, Image, FlatList } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
+import TableCode from './components/TableCode'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import Table2 from './components/TableTask'
+
 
 export default function App() {
     const data = [
@@ -23,7 +27,7 @@ export default function App() {
     ]
     return (
         <>
-            <View style={styles.status}></View>
+            {/* <View style={styles.status}></View>
             <View style={styles.container}>
                     <FlatList data={data} horizontal  contentContainerStyle={styles.flatListContent}
                         renderItem={({ item }) =>
@@ -42,7 +46,11 @@ export default function App() {
                             </View>
                         </View>
                         } />
-            </View>
+            </View> */}
+            <SafeAreaView>
+                {/* <TableCode /> */}
+                <Table2 />
+            </SafeAreaView>
             <StatusBar style='auto' />
         </>
     )

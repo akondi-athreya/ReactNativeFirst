@@ -4,7 +4,7 @@ import React from 'react'
 import TableCode from './components/TableCode'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Table2 from './components/TableTask'
-
+import LoginTask from './components/LoginTask'
 
 export default function App() {
     const data = [
@@ -49,7 +49,8 @@ export default function App() {
             </View> */}
             <SafeAreaView>
                 {/* <TableCode /> */}
-                <Table2 />
+                {/* <Table2 /> */}
+                <LoginTask />
             </SafeAreaView>
             <StatusBar style='auto' />
         </>

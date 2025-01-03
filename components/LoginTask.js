@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import logo from '../assets/landing_home_new.png'
+import Icon from 'react-native-vector-icons/AntDesign';
+
 
 export default function LoginTask() {
     return (
@@ -13,12 +15,17 @@ export default function LoginTask() {
                     <Text style={styles.text_heading}>Hello</Text>
                     <Text style={styles.text_matter}>Welcome To Lorem ipsum odor amet, consectetuer adipiscing elit.</Text>
                     <View style={styles.buttonContainer}>
-                        <TouchableOpacity style={styles.loginbtn}>
+                        <TouchableOpacity style={styles.loginbtn} onPress={() => console.log("login")}>
                             <Text style={styles.text_btn}>Login</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.signupbtn}>
+                        <TouchableOpacity style={styles.signupbtn} onPress={() => console.log("signup")}>
                             <Text style={styles.text_btn2}>Signup</Text>
                         </TouchableOpacity>
+                    </View>
+                    <View style={styles.iccoon}>
+                        <Icon name="google" size={35} color="#003049" />
+                        <Icon name="facebook-square" size={35} color="#003049" />
+                        <Icon name="twitter" size={35} color="#003049" />
                     </View>
                 </View>
             </View>
@@ -40,7 +47,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     Landing_bottom: {
-        height: "35%",
+        height: "40%",
         width: "100%",
         display: "flex",
         justifyContent: 'space-evenly',
@@ -49,14 +56,14 @@ const styles = StyleSheet.create({
     text_heading: {
         textAlign: 'center',
         fontSize: 50,
-        fontWeight: 900,
+        fontWeight: 600,
     },
     image_: {
         width: "90%",
         height: "90%"
     },
     text_matter: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 300,
         textAlign: 'center',
         width: "70%"
@@ -95,4 +102,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
+    iccoon: {
+        display:'flex',
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignItems: 'center',
+        columnGap: 30,
+        padding: 20,
+    }
 })

@@ -1,10 +1,11 @@
 import { ScrollView, StyleSheet, Text, View, Image, FlatList } from 'react-native'
-import { StatusBar } from 'expo-status-bar'
+// import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import TableCode from './components/TableCode'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Table2 from './components/TableTask'
 import LoginTask from './components/LoginTask'
+import Zing from './components/Example'
 
 export default function App() {
     const data = [
@@ -27,32 +28,7 @@ export default function App() {
     ]
     return (
         <>
-            {/* <View style={styles.status}></View>
-            <View style={styles.container}>
-                    <FlatList data={data} horizontal  contentContainerStyle={styles.flatListContent}
-                        renderItem={({ item }) =>
-                        <View style={styles.card}>
-                            <View style={styles.imageContainer}>
-                                <Image
-                                    style={styles.profileImage}
-                                    source={{ uri: `https://info.aec.edu.in/adityacentral/studentphotos/${item.RollNo}.jpg` }}
-                                />
-                            </View>
-                            <View style={styles.infoContainer}>
-                                <Text style={styles.text}><Text style={styles.label}>Name :</Text> {item.name}</Text>
-                                <Text style={styles.text}><Text style={styles.label}>Roll No :</Text> {item.RollNo}</Text>
-                                <Text style={styles.text}><Text style={styles.label}>Branch :</Text> AI & ML</Text>
-                                <Text style={styles.text}><Text style={styles.label}>College :</Text> ACET</Text>
-                            </View>
-                        </View>
-                        } />
-            </View> */}
-            <SafeAreaView>
-                {/* <TableCode /> */}
-                {/* <Table2 /> */}
-                <LoginTask />
-            </SafeAreaView>
-            <StatusBar style='auto' />
+            <Zing />
         </>
     )
 }

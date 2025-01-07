@@ -24,8 +24,10 @@ export default function LoginTask() {
                     </View>
                     <View style={styles.iccoon}>
                         <Icon name="google" size={35} color="#003049" />
+                        <Icon name="github" size={35} color="#003049" />
                         <Icon name="facebook-square" size={35} color="#003049" />
                         <Icon name="twitter" size={35} color="#003049" />
+                        <Icon name="linkedin-square" size={35} color="#003049" />
                     </View>
                 </View>
             </View>

@@ -28,7 +28,7 @@ export default function App() {
     ]
     return (
         <>
-            <Zing />
+            {/* <Zing /> */}
         </>
     )
 }

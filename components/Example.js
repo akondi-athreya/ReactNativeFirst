@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
+import LottieView from 'lottie-react-native';
 
 const Zing = () => {
     const [statusBarHidden, setStatusBarHidden] = useState(false);
@@ -26,7 +27,7 @@ const Zing = () => {
         <SafeAreaView style={styles.container}>
             <StatusBar hidden={statusBarHidden} 
                 style="light" backgroundColor='black' animated />
-            <ScrollView style={styles.home} 
+            {/* <ScrollView style={styles.home} 
                 onScroll={handleScroll} scrollEventThrottle={16}>
                 <Text style={styles.text}>Hello World !</Text>
                 <Text style={styles.text}>Hello World !</Text>
@@ -54,7 +55,10 @@ const Zing = () => {
                 <Text style={styles.text}>Hello World !</Text>
                 <Text style={styles.text}>Hello World !</Text>
                 <Text style={styles.text}>Hello World !</Text>
-            </ScrollView>
+            </ScrollView> */}
+            {/* <LottieView source={require('../assets/paak.json')} autoPlay loop style={{width:200, height:200}}/> */}
+            {/* <LottieView source={require('../assets/ding.json')} autoPlay loop style={{width:100, height:100}}/> */}
+            <LottieView source={require('../assets/dong.json')} autoPlay loop style={{width:400, height:400}}/>
         </SafeAreaView>
     );
 };

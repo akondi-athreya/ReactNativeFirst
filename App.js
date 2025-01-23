@@ -6,6 +6,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Table2 from './components/TableTask'
 import LoginTask from './components/LoginTask'
 import Zing from './components/Example'
+import Modal from './components/modal'
+import ThubTask from './components/ThubTask'
+import Carosal from './components/Carosal'
 
 export default function App() {
     const data = [
@@ -29,6 +32,9 @@ export default function App() {
     return (
         <>
             {/* <Zing /> */}
+            {/* <Modal /> */}
+            {/* <ThubTask /> */}
+            <Carosal />
         </>
     )
 }
@@ -93,5 +99,5 @@ const styles = StyleSheet.create({
         fontWeight: '900',
         fontSize: 24,
         color: '#007bff',
-    },
+    }, 
 })
